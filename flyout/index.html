@@ -1,0 +1,136 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyout</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="flyout/flyout.demo.css" rel="stylesheet" />
+    <link href="flyout/flyout.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="white-block">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xs-12 col-md-12 text-center">
+                    <h1>jQuery Flyout</h1>
+                    <h3>A jQuery plugin that provides additional content as a flyout.</h3>
+                    <a class="btn btn-success btn-large" href="#">GitHub Download</a>
+                    <p>Add dynamic flyout content to almost any ui component. Take a look at examples below.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="example-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12 text-center">
+
+                    <h2>Example One</h2>
+                    <h5>Hover over the div element to show additional with a flyout.</h5>
+
+                    <div id="flyExample01" class="example-one text-center">
+                        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum </p>
+                        <div class="fly"><p>Additional content for this product.</p></div>
+                    </div>
+                    <p>1. Create a container element, in this case a div.</p>
+                    <pre class="example-code">&lt;div&gt;&lt;p&gt;Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;&lt;/div&gt;</pre>
+
+                    <p>2. Create a second div as a child element with class <strong>fly</strong>.</p>
+
+                    <pre class="example-code">&lt;div&gt;&lt;p&gt;Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
+<strong>&lt;div class="fly"&gt;&lt;p&gt;Additional content for this product.&lt;/p&gt;&lt;/div&gt;</strong><br>&lt;/div&gt;</pre>
+
+                    <p>3. Initialize the plugin.</p>
+
+                    <pre class="example-code">
+$("#flyExample01").initFlyout({
+   color: "#fff",
+   backgroundColor: "#999"
+});
+</pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="example-block">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xs-12 col-md-12 text-center">
+
+                    <h2>Example Two</h2>
+                    <p>A menu with flyouts for each item.</p>
+
+                    <ul id="flyExample02" class="example-two">
+                        <li>One<div class="fly">Additional content for item one.</div></li>
+                        <li>Two<div class="fly">Additional content for item two.</div></li>
+                        <li>Three<div class="fly">Additional content for item three.</div></li>
+                    </ul>
+  
+                    <p>1. For components with multiple items such as menus, add a child div to each item.</p>
+                    <pre class="example-code">
+&lt;ul id="flyExample02" class="example-two"&gt;
+&lt;li&gt;One&lt;div class="fly"&gt;Additional content for item one.&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Two&lt;div class="fly"&gt;Additional content for item two.&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Three&lt;div class="fly"&gt;Additional content for item three.&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+
+                    <p>2. Then iterate to initialize each item in the menu.</p>
+
+                    <p>(In this example, the width of the flyout is specified to override the default setting of 100 pixels.)</p>
+<pre class="example-code">
+$("#flyExample02").find("li").each(function () {
+    $(this).initFlyout({
+        color: "#000",
+        backgroundColor: "#ccc",
+        flyoutWidth: 200
+    });
+});
+</pre>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-block">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xs-12 col-md-12 text-center">
+                        <p><a href="http://www.davis3web.com">alex davis</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script/jquery-1.10.2.js"></script>
+    <script src="flyout/flyout.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        $(document).ready(function ($) {
+
+            $("#flyExample01").initFlyout({
+                color: "#fff",
+                backgroundColor: "#999"
+            });
+
+            $("#flyExample02").find("li").each(function () {
+                $(this).initFlyout({
+                    color: "#000",
+                    backgroundColor: "#ccc",
+                    flyoutWidth: 200
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
